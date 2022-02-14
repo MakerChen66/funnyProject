@@ -1,0 +1,118 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #161929;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+}
+
+audio {
+    opacity: 0;
+}
+
+.message {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    width: 160px;
+    background-color: rgba(0, 0, 0, 0.52);
+    padding: 0px 17px;
+    top: 25px;
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 1000;
+    opacity: 0;
+}
+
+/* 消息提示框内容样式 */
+.message p {
+    line-height: 1;
+    font-size:14px;
+    color: #ffffff;
+}
+
+.spark {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: rgba(231, 200, 160, 0.8);
+    box-shadow: 0 0 40px 0 rgba(231, 200, 160, 0.8);
+    animation: glow 5s infinite;
+}
+
+.medium-spark {
+    width: 7px;
+    height: 7px;
+}
+
+.big-spark {
+    width: 10px;
+    height: 10px;
+    box-shadow: 0 0 40px 0 #e9c9a0, 0 0 20px 0 #FFFFFF, inset 0 0 4px #FFFFFF;
+}
+
+.meteor {
+    width: 6px;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 40px 0 #e9c9a0, 0 0 20px 0 #FFFFFF, inset 0 0 8px rgba(255, 255, 255, 0.6);
+    top: 0;
+    left: 80%;
+    opacity: 0.3;
+    transform: rotate(-45deg) translate(0, -50px);
+    animation: meteor 7s infinite;
+}
+
+.meteor:after {
+    content: '';
+    width: 20vw;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(231, 200, 160, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@keyframes glow {
+    0% {
+        opacity: 0.9;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 0.9;
+    }
+}
+
+@keyframes meteor {
+    0% {
+        transform: rotate(-45deg) translateX(0);
+        opacity: 0.3;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    20% {
+        transform: rotate(-45deg) translateX(-100vw);
+        opacity: 0;
+    }
+
+    100% {
+        transform: rotate(-45deg) translateX(-100vw);
+        opacity: 0;
+    }
+}

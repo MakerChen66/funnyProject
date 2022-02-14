@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>新年烟花</title>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico">
+        <link rel="stylesheet" href="static/css/style.css">
+    </head>
+
+    <body onselectstart="return false">
+        <!-- 消息提示 -->
+        <div class="message">
+            <p>请单击屏幕开启背景音乐</p>
+        </div>
+        <!-- 流星与星火 -->
+        <div id="backgroundRendering" style="z-index: 0;"></div>
+
+        <!--烟花-->
+        <canvas id="fireworks" style="z-index: 9999;">
+            您的浏览器不支持canvas标签。
+        </canvas>
+
+        <!-- 背景音乐 -->
+        <audio id="bgm" src="static/mp3/bgm.mp3" loop autoplay>
+            您的浏览器不支持 audio 标签。
+        </audio>
+
+        <!-- 自定义内容弹窗 -->
+        <div style="display: none">
+            <div class="shape">🏮2022新年快乐🏮</div>
+            <div class="shape">🏮恭喜发财🏮</div>
+            <div class="shape">🏮万事如意🏮</div>
+            <div class="shape">🏮吉庆有余🏮</div>
+            <div class="shape">🏮心想事成🏮</div>
+            <div class="shape">🏮喜气盈门🏮</div>
+            <div class="shape">🏮阖家欢乐🏮</div>
+            <div class="shape">🏮财源广进🏮</div>
+        </div>
+
+        <script src="static/js/main.js"></script>
+    </body>
+
+</html>
