@@ -22,7 +22,7 @@ class breakWiFi(object):
 		"""
 		astring = "1234567890"	#可添加字母和特殊字符
 		pwds = it.product(astring, repeat=8)	#8位密码长度
-		with open('filepath', 'a', encoding='utf-8') as f:
+		with open(filepath, 'a', encoding='utf-8') as f:
 			for pwd in pwds:	
 				f.write(''.join(pwd))
 				f.write(''.join('\n'))
@@ -90,12 +90,15 @@ class breakWiFi(object):
 if __name__ == '__main__':
 	print('*' * 20 + 'WiFi万能钥匙' + '*' * 25)
 	b = breakWiFi()
+	print('\n正在创建密码库，请稍后………………')
 	filepath = b.writePassword('pwd.txt')
-	wifiList = b.wifiScan()
-	try:
-		wifiIndex = int(input('请选择你要暴力破解的WiFi编号：'))
-		if wifiIndex in range(len(wifiList)):
-			b.wifiBreak('./' + filepath, wifiList[wifiIndex][1])
-		print('*' * 50)
-	except Exception as e:
-		print(e.args)
+	if filepath:
+		print('创建成功！')
+		wifiList = b.wifiScan()
+		try:
+			wifiIndex = int(input('请选择你要暴力破解的WiFi编号：'))
+			if wifiIndex in range(len(wifiList)):
+				b.wifiBreak('./' + filepath, wifiList[wifiIndex][1])
+			print('*' * 50)
+		except Exception as e:
+			print(e.args)
