@@ -1,7 +1,7 @@
 # !/usr/bin/python3
 # -*- coding: utf-8 -*-
 # author: makerchen
-# time: 2022-10-15
+# time: 2022-10-16
 
 
 import itertools as it
